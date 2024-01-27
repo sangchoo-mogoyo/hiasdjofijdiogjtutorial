@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>windows-tutorial</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="using-command-line-tools-on-windows">using command-line tools on windows!</h1>
+<p>hello, today I will walk through the processes of how to run some command-line programs on windows.</p>
+<h2 id="what-is-a-command-line-program">what is a command-line program?</h2>
+<p>command-line programs are like other computer programs, e.g. your web browser, or discord, etc. except you run them by typing some commands in a “command line”/“command prompt”/“terminal”!.</p>
+<p>why command-line instead of regular programs you can just click around to use and have graphics? I believe since command-line “commands” are just some text, it is much easier for programmers to write command-line programs than graphical clicky programs. So, it ends up that are often many very useful programs that are only command-line programs.</p>
+<h2 id="opening-a-terminalcommand-line">opening a terminal/command line</h2>
+<p>first, let us open a terminal. how? on windows, there are a few pre-installed terminal command-prompt things. In my opinion they are actually kind of meh and use a different tool called “windows subsystem for linux”, however I will avoid installing extra stuff more than is necessary in this tutorial. So I have selected the windows command-prompt called “Powershell”. (btw “shell” means “terminal” means “command prompt/line” approx.)</p>
+<h3 id="opening-powershell">opening powershell</h3>
+<p>if you search for the “powershell” program in your windows menu, you can click it and it will open up. it will look something like this:</p>
+<figure>
+<img src="windows-tut-media/powershell_Palv7Ri2NW.png" alt="" /><figcaption>shell</figcaption>
+</figure>
+<p>It will have something that approx looks like that. Most important is the bit that says <code>C:\Users\&lt;your username&gt;</code> (my user name is just “z”). That <code>C:\Users\&lt;your username&gt;</code> signifies your <em>working directory</em>, i.e. what folder you currently reside in on your computer!!</p>
+<h3 id="navigating-around-different-folders">navigating around different folders</h3>
+<p>When using the command-line, you will be navigating around your computer a lot! so, let us learn how to move around.</p>
+<h4 id="listing-the-working-directory-note-directory-means-folder">listing the “working directory” (note: “directory” means “folder”)</h4>
+<p>You can <strong>l</strong>i<strong>s</strong>t the current files/folders in your “working directory” by typing <code>ls</code> into the command prompt, then pressing Enter.</p>
+<p>hopefully, somthing like this will show up:</p>
+<figure>
+<img src="windows-tut-media/powershell_GwMY11L9i6.png" alt="" /><figcaption>ls</figcaption>
+</figure>
+<p>what shows up will be a list of all the files/folders in your <code>C:\Users\&lt;your username&gt;</code> folder!</p>
+<h4 id="changing-your-working-directory">changing your “working directory”</h4>
+<p>In this tutorial, I will store all my files on my Desktop in a folder called “tutorial”. however, I don’t have that folder yet! So let’s create it.</p>
+<p>You can <strong>c</strong>hange your working <strong>d</strong>irectory by typing <code>cd &lt;the folder you want to change to&gt;</code>. In this case i want to go to my Desktop (as it is listed when i used <code>ls</code> above). So I can type <code>cd Desktop</code>.</p>
+<figure>
+<img src="windows-tut-media/powershell_mTrvNf0fOO.png" alt="" /><figcaption>changed directory</figcaption>
+</figure>
+<p>note that that bit on the line where i type the commands has changed to <code>C:\Users\z\Desktop&gt;</code>!! because i have changed directory to my Desktop!.</p>
+<blockquote>
+<p>note: if you type <code>ls</code> right now, it will list all the files/folders on your Desktop!</p>
+</blockquote>
+<p>now, I will create a folder to store the tutorial files. I could do this regularly, by just going to my desktop and right-clicking or something and making a new folder. However, I can also do this by just typing <code>mkdir &lt;name of folder i want&gt;</code> while inside my Desktop folder (i already am)!</p>
+<p>So, I will type <code>mkdir tutorial</code> and then <code>cd tutorial</code> in order to <strong>m</strong>a<strong>k</strong>e my “tutorial” <strong>dir</strong>ectory and then <strong>c</strong>hange my working <strong>d</strong>irectory to that new directory.</p>
+<figure>
+<img src="windows-tut-media/powershell_L6G3c9zlLj.png" alt="" /><figcaption>in tutorial directory</figcaption>
+</figure>
+<blockquote>
+<p>tip: you can press Ctrl+L to clear your terminal screen</p>
+</blockquote>
+<blockquote>
+<p>important tip: you can use <code>..</code> to change directory “backwards”</p>
+<p>for example, if you are currently inside <code>C:\Users\username\Desktop\tutorial</code>, and you want to go to <code>C:\Users\username\Desktop</code>, you can type <code>cd ..</code> to do that!</p>
+<p>another example: if you are in <code>C:\Users\username\Desktop\tutorial</code> and want to go to <code>C:\Users\username</code>, you can type <code>cd ..\..</code></p>
+<p>final example: if you are in <code>C:\Users\username\Desktop\tutorial</code> and want to go to <code>C:\Users\username\Pictures</code>, you can use <code>cd ..\..\Pictures</code>!!</p>
+</blockquote>
+<h3 id="running-a-program">running a program</h3>
+<p>ok, now we are in a nice new folder to do whatever we want in it!</p>
+<p>let us now run the command-line programs we want!!</p>
+<h4 id="downloading-the-program">downloading the program</h4>
+<p>We will use the program “ffmpeg”. it is a very useful program for converting and processing video and audio! We can download it by just googling “ffmpeg” and going to the download section. We are running Windows, so we want to download a “Windows Build”.</p>
+<figure>
+<img src="windows-tut-media/firefox_qt8Emb5bzK.png" alt="" /><figcaption>downloading ffmpeg</figcaption>
+</figure>
+<p>I do not think it matters which one you download. But I recommend clicking the “Windows builds by BtbN” (<a href="https://github.com/BtbN/FFmpeg-Builds/releases" class="uri">https://github.com/BtbN/FFmpeg-Builds/releases</a>), because the other one I believe you would need to also install 7zip to unzip the files. I will use this “BtbN releases” for the rest of tutorial!</p>
+<blockquote>
+<p>note: hi, its me from the future! it turns out that these BtbN releases had some problems for me, and i switched over to the other ones haha!!oops..</p>
+<p>you can download the other ones from here <a href="https://github.com/GyanD/codexffmpeg/releases/tag/6.1.1" class="uri">https://github.com/GyanD/codexffmpeg/releases/tag/6.1.1</a> the <code>ffmpeg-6.1.1-full_build.zip</code>, and the tutorial should be basically exactly the same except the folder is named differently (<code>ffmpeg-6.1.1-full_build</code> instead of <code>ffmpeg-master-latest-win64-gpl</code>). very sorry about this !</p>
+<p>or you can just follow the tutorial as-is and when it gets to the point where i realise it has some problems ill let you know and you can just.. download it then because the tutorial will switch over to it</p>
+</blockquote>
+<figure>
+<img src="windows-tut-media/firefox_HM6TSoGWOL.png" alt="" /><figcaption>github</figcaption>
+</figure>
+<p>I downloaded the “ffmpeg-master-latest-win64-gpl.zip” file from that website (github), and then unzipped the contents to my “working directory” (<code>C:\Users\z\Desktop\tutorial</code>).</p>
+<h4 id="running-the-program">running the program!!</h4>
+<p>OK, now in your “working directory”, you should have a folder containing ffmpeg stuff!! you can explore these folders by using <code>cd</code> and <code>ls</code> as you please.</p>
+<figure>
+<img src="windows-tut-media/powershell_iJ7InynBBg.png" alt="" /><figcaption>exploration</figcaption>
+</figure>
+<blockquote>
+<p>tip: you can press “tab” while typing a command for the command-prompt to try to autocomplete what you are typing. this is especially helpful while typing long file names!</p>
+</blockquote>
+<blockquote>
+<p>note: the second command i typed in the above screenshot (<code>cd .\ffmpeg-master-latest-win64-gpl\</code>) is equivalent to just <code>cd ffmpeg-master-latest-win64-gpl</code>. a period (<code>.</code>) represents the current directory. i used the tab autocomplete when typing that command, and it added the <code>.\</code> in front and <code>\</code> afterwards, idrk why.</p>
+</blockquote>
+<p>Here, the actual ffmpeg “program” is located in <code>ffmpeg-master-latest-win64-gpl\bin\</code> and is named <code>ffmpeg.exe</code>!! it should be similarish for you!</p>
+<p>To run it, you can simply type the name of the file. However, in the case that you are in the same directory as the program, you must include <code>.\</code> at the beginning of the name!! because otherwise the command prompt will not know to try to execute it (dont ask me why bc idrk). <code>.</code> just means the current directory, so <code>.\ffmpeg.exe</code> means “ffmpeg.exe, which is in the current directory”.</p>
+<figure>
+<img src="windows-tut-media/powershell_cwbEe5gqyl.png" alt="" /><figcaption>ran ffmpeg</figcaption>
+</figure>
+<p>omg!! we’ve run the program! that big text it just gave us is just informing us about what it is capable of doing and stuff. it gave us that big text and exited.</p>
+<h3 id="what-can-we-do-with-the-program">what can we do with the program??</h3>
+<p>it is very exciting now that we have run the program. but what can the program do? this is a good question. usually, you would actually probably just google something like “ffmpeg how do i do ABC” and then people will tell you how to run the program to accomplish what you want.</p>
+<p>However, also most programs will have some kind of “help” functionality built-in to them. and to access it, you would often type something like <code>PROGRAM --help</code> or <code>PROGRAM -h</code>. Notice the dashes in front of the <code>help</code> and <code>h</code>!! dashes are very common in specifying command-line program “arguments” (arguments = things that you type after <code>PROGRAM</code>)</p>
+<p>so, we can access ffmpeg help by typing <code>.\ffmpeg.exe --help</code></p>
+<figure>
+<img src="windows-tut-media/powershell_MjtH4YBrAE.png" alt="" /><figcaption>help</figcaption>
+</figure>
+<p>and in this case the ‘help’ is quite long and kind of not very helpful imo idk. oh well!</p>
+<h2 id="doing-a-thing-with-the-program">doing a thing with the program</h2>
+<p>so far, we have successfully “run” ffmpeg twice: once without any “arguments” and once with a <code>--help</code> “argument”. To make ffmpeg do nice things, we simply would need to pass it yet different “arguments”.</p>
+<p>so, let’s do a nice thing! I will decide what we are doing because I am writing this tutorial</p>
+<h2 id="slicing-a-video">slicing a video</h2>
+<p>a common nice thing someone might want to do is to cut out a small slice of a larger video. take a little clip!. so, let us do that.</p>
+<p>I will use this video!!: <a href="media/w2xyhh.mp4">link to video (its named weirdly because i was going to host it somewhere else but eventually decided not to)</a></p>
+<figure>
+<video src="media/w2xyhh.mp4" controls=""><a href="media/w2xyhh.mp4"></a></video><figcaption>the video</figcaption>
+</figure>
+<p>i have just downloaded it into the same folder as my ffmpeg.exe program</p>
+<figure>
+<img src="windows-tut-media/powershell_CkjtFIi5Pb.png" alt="" /><figcaption>downloaded</figcaption>
+</figure>
+<p>(when i run <code>ls</code> you can see that it is in the same folder, named as <code>w2xyhh.mp4</code>)</p>
+<p>Let us cut out the bit of the video where hyein says “oui”, i would say.. approx second 11 of video to second 13 of video.</p>
+<p>how do we do this?? well actually remember how i said that you basically just google it most of time?? to write this section of the tutorial i have literally just googled “ffmpeg cut from time to time” and clicked whatever looked good (which was the first link).</p>
+<figure>
+<img src="windows-tut-media/firefox_kwYwRbui6J.png" alt="" /><figcaption>searched google for answers</figcaption>
+</figure>
+<p>how helpful, it explains what all parts of the arguments are doing! it is always good to understand what things you are running in the program so that you can modify them as you see fit, and also so that you know you are not going to copy something into your command prompt that will explode your computer and erase your bank account or something.</p>
+<p>so, following that person’s guidance, i have formulated the following command in order to cut the “oui” part out of our video:</p>
+<pre><code>.\ffmpeg.exe -ss 11s -to 13s -i w2xyhh.mp4 output.mp4</code></pre>
+<p>The argments mean the following: - <code>-ss 11s</code>: start from 11 seconds - <code>-to 13s</code>: end at 13 seconds - <code>-i w2xyhh.mp4</code>: use w2xyhh.mp4 as the input - <code>output.mp4</code>: output the output as <code>output.mp4</code>!!.</p>
+<p>based on my previous experience with ffmpeg i have changed some parts, like using <code>11s</code> instead of a full <code>00:00:11</code> timestamp because i know that ffmpeg lets me do that. and also i ignored <code>-c copy</code> because that has to do with “codecs” and stuff and i do not want to deal with that stuff now.</p>
+<p>i ran this command, and it was done in no time!!</p>
+<figure>
+<img src="windows-tut-media/powershell_2nYEOFdxaP.png" alt="" /><figcaption>ran</figcaption>
+</figure>
+<p>it lists a lot of technical detail thingies.</p>
+<figure>
+<img src="windows-tut-media/powershell_NkP2wO51wG.png" alt="" /><figcaption>ls</figcaption>
+</figure>
+<p>and if i run <code>ls</code> i can see that there is now the new file <code>output.mp4</code>. fantastic!!.</p>
+<figure>
+<video src="media/output-1.mp4" controls=""><a href="media/output-1.mp4"></a></video><figcaption>oui</figcaption>
+</figure>
+<p>however, it seems like cutting from 11 seconds was a bit too early, because there is a bit of non-oui moment. so to fix that i can just cut from maybe.. 11.5 seconds?</p>
+<pre><code>.\ffmpeg.exe -ss 11.5s -to 13s -i w2xyhh.mp4 output.mp4</code></pre>
+<blockquote>
+<p>helpful tip: you can use your UP and DOWN arrow keys to go through your COMMAND HISTORY. so for example, to type the above command, i just pressed UP KEY (twice) to find the 11s version that i ran last time, then just edited the <code>11s</code> to <code>11.5s</code>.</p>
+</blockquote>
+<figure>
+<img src="windows-tut-media/powershell_dA68IyPi00.png" alt="" /><figcaption>y/N</figcaption>
+</figure>
+<p>when i run this 11.5s command, it will ask me if i want to overwrite output.mp4 with the new version. and i can just type <code>y</code> and enter and it will do it!.</p>
+<p>checking the new output.mp4, it seems satsifactory!!</p>
+<figure>
+<video src="media/output-2.mp4" controls=""><a href="media/output-2.mp4"></a></video><figcaption>oui2</figcaption>
+</figure>
+<p>that was cool! we successfully generated a clip from a larger video.</p>
+<p>and as a final bonus cool thing, we can actually generate a gif (or any other video format) by telling ffmpeg to output <code>filename.gif</code> instead of <code>filename.mp4</code>, e.g.:</p>
+<pre><code>.\ffmpeg.exe -ss 11.5s -to 13s -i w2xyhh.mp4 cool.gif</code></pre>
+<figure>
+<img src="media/cool.gif" alt="" /><figcaption>woww</figcaption>
+</figure>
+<p>woww!! (even though the gif is 18mb, has strange artefacts due to default way ffmpeg handles it, and etc. however, these problems could maybe be resolved by looking into other command options!!)</p>
+<h1 id="the-thing-i-made">the thing i made</h1>
+<p>OK now we have seen approx how to run a command-line program, and ffmpeg things. great! now, it is the second part of the tutorial, which is: the thing i made!</p>
+<p>OK this part is a bit convoluted so stay with me !</p>
+<p>the thing i made is a “script”/program thing.. that has to be run by another program (called Deno). so first, we must download “Deno”!</p>
+<h2 id="downloading-deno">downloading Deno</h2>
+<p>there are different ways to download/use Deno, but here I will use the most least-invasive installation which is just download an .exe file and run it.</p>
+<p>here are the steps:</p>
+<ol type="1">
+<li><p>go to <a href="https://github.com/denoland/deno/releases" class="uri">https://github.com/denoland/deno/releases</a></p></li>
+<li><p>download <code>deno-x86_64-pc-windows-msvc.zip</code> of the most recent version</p>
+<ol type="a">
+<li>that zip file will contain a single file <code>deno.exe</code></li>
+</ol></li>
+<li><p>unzip <code>deno.exe</code> to wherever is convenient to run</p>
+<ol start="2" type="a">
+<li>for this tutorial, i will just put it in my same folder as i have my <code>ffmpeg.exe</code> in as well to make it simple</li>
+</ol></li>
+</ol>
+<h2 id="running-deno">running Deno</h2>
+<p>ok now when i list my files in the directory ive been working in it will have <code>deno.exe</code>!</p>
+<figure>
+<img src="windows-tut-media/powershell_3inOxUHIAa.png" alt="" /><figcaption>folder</figcaption>
+</figure>
+<p>if we try to run <code>deno.exe</code> without any arguments, itll start an ‘interactive session’ or sth, which is cool but not what we currently want to do in this tutorial , so i would not recommend doing that. if you do, you can exit it by pressing ctrl+D, or ctrl+C (twice).</p>
+<figure>
+<img src="windows-tut-media/powershell_cLw352oe6A.png" alt="" /><figcaption>interactive</figcaption>
+</figure>
+<h3 id="downloading-my-script-thingy-and-running-it-with-deno">downloading my script thingy and running it with deno</h3>
+<p>what we want to do is run my script thingy with Deno! you can download it from here: <a href="./media/subthing.js">subthing.js</a></p>
+<p>I have saved it in the same folder as everything else right now (named as <code>subthing.js</code>):</p>
+<figure>
+<img src="windows-tut-media/powershell_eHy3fDNW7R.png" alt="" /><figcaption>script is there</figcaption>
+</figure>
+<p>and to run it with deno, we type</p>
+<pre><code>.\deno.exe run subthing.js</code></pre>
+<figure>
+<img src="windows-tut-media/powershell_4CS2Cfzdol.png" alt="" /><figcaption>ran script</figcaption>
+</figure>
+<p>and if we do that we (hopefully) get a very unhelpful error message that i wrote that means “i need another argument that is a ‘script’ file”</p>
+<h3 id="explaining-what-my-thingy-actually-does">explaining what my thingy actually does</h3>
+<p>OK so to use my Thing we must determine what it actually Does. so i have attempted to summarize what it does:</p>
+<p>it essentially takes like a modified sbv (subtitles) file that looks like this:</p>
+<pre><code>#!input=hyein-241901.mp4
+
+#!out=bbo.mkv
+
+0:12:36.899,0:12:38.243
+Do PoPiPo?
+
+0:12:40.313,0:12:42.083
+Po pi po pi po po pi po~
+
+0:12:42.105,0:12:43.833
+Po pi po pi po po pi po~
+
+0:12:43.854,0:12:45.762
+Po pi po pi po (😉) po pi po~ (🙂👈)
+
+0:12:46.698,0:12:47.227
+..ok!
+
+#!out=thanks.webm
+
+0:14:44.345,0:14:45.270
+I was--
+
+0:14:45.550,0:14:47.939
+I was nervous due to various different reasons, but then--
+
+0:14:48.467,0:14:50.323
+Thanks to everyone who was cheering me on-- lots of..
+
+0:14:50.489,0:14:51.619
+Bunnies..
+
+0:14:52.174,0:14:55.182
+???..
+
+0:14:55.715,0:14:58.275
+And those around me, I was able to be less nervous--
+
+0:14:58.771,0:14:59.939
+And was able to pull through!</code></pre>
+<p>it is like a regular sbv file except it has some lines like <code>#!input=hyein-241901.mp4</code>, <code>#!out=bbo.mkv</code>, and <code>#!out=thanks.webm</code>.</p>
+<p>The line <code>#!input=hyein-241901.mp4</code> specifies what video file the subs are for!!</p>
+<p>and the lines <code>#!out=bbo.mkv</code> and <code>#!out=thanks.webm</code> specify to use the following subtitles to <em>generate a ffmpeg command to cut out the video file in such a way that approx represents the subtitles and glue all the parts together</em>.</p>
+<p>So in this case the Thingy will generate two ffmpeg command, one to generate <code>bbo.mkv</code> with popipo moments, and another to generate <code>thanks.webm</code>, which contains the non-popipo moments.</p>
+<p>hopefully that kind of made sense😅 but if it doesnt hopefully going through a concrete example will help!!</p>
+<h3 id="using-the-thingy-for-real">using the thingy for real</h3>
+<p>ok lets go through an example of using the Thingy 🙂</p>
+<p>we will use the Thingy on the video we have used earlier, the one we extracted the Oui moment from (mine is named <code>w2xyhh.mp4</code>).</p>
+<p>first, we need some subs for the video!! so i have written some up:</p>
+<pre><code>0:00:01.069,0:00:01.696
+Excuse me!
+
+0:00:01.696,0:00:02.338
+Excuse me--
+
+0:00:02.432,0:00:02.898
+Excuse me
+
+0:00:03.576,0:00:03.885
+Do you--
+
+0:00:03.880,0:00:05.321
+Do you speak a little bit of English?
+
+0:00:05.524,0:00:06.287
+Yes
+
+0:00:06.390,0:00:06.945
+Ah, I just--
+
+0:00:06.945,0:00:08.100
+I just really love your outfit
+
+0:00:08.096,0:00:09.029
+I&#39;m-- I&#39;m a street photographer
+
+0:00:09.030,0:00:11.500
+- Thank you
+- I&#39;d love to take your photos, is that okay?
+
+0:00:11.905,0:00:12.542
+Oui</code></pre>
+<blockquote>
+<p>note: idk if you knew this already but .sbv subtitles are just text files and you can open them with notepad (they look like the subs above (because the subs above are .sbv formatted)). i will use notepad to edit subtitle thingies for the rest of this tutorial!</p>
+</blockquote>
+<p>i will just paste this into Notepad for editing! and recommend you do the same</p>
+<figure>
+<img src="windows-tut-media/notepad_rCKOrrUsnT.png" alt="" /><figcaption>inside notepad and ready to edit text</figcaption>
+</figure>
+<p>OK right now we have subtitles, and now all we need to do is</p>
+<ol type="1">
+<li><p>add an <code>#!input=&lt;video file here&gt;</code> to specify what video file we want to use</p></li>
+<li><p>add a <code>#!out=&lt;video file here&gt;</code> to specify what video file we want to create</p></li>
+<li><p>select just the subs we want to use to cut out the video</p></li>
+</ol>
+<p>here is what i came up with (note: the empty lines between subs and the <code>#!blah=blah</code> lines are important!):</p>
+<pre><code>#!input=w2xyhh.mp4
+
+#!out=hello.mkv
+
+0:00:01.069,0:00:01.696
+Excuse me!
+
+0:00:01.696,0:00:02.338
+Excuse me--
+
+0:00:02.432,0:00:02.898
+Excuse me
+
+0:00:03.576,0:00:03.885
+Do you--
+
+0:00:03.880,0:00:05.321
+Do you speak a little bit of English?
+
+0:00:11.905,0:00:12.542
+Oui</code></pre>
+<p>it will use my file <code>w2xyhh.mp4</code> to generate one file called <code>hello.mkv</code> which will depict hanni saying “excuse me do you speak a bit of english??” and hyein replying “oui”.</p>
+<blockquote>
+<p>note: you may or may not be wondering why im naming the output as <code>hello.mkv</code> and not like <code>hello.mp4</code>. this has to do with um a thing, basically the command it generates also tries to like put subs into the video? but mp4 doesnt support subtitles “in” the video..so.. i recommend only using either .mkv, or .webm haha. or you could rewrite how the scripts work to use mp4 as an intermediate thing .. but… yeah.. idk.. tbh idk what im doing</p>
+</blockquote>
+<blockquote>
+<p>note: oh no!! things messed up. it turns out that the ffmpeg i downloaded at the beginning of the tutorial doesnt work, at least for me. for the things that we need to do. so i ended up downloading a different windows build of ffmpeg from here <a href="https://github.com/GyanD/codexffmpeg/releases/tag/6.1.1" class="uri">https://github.com/GyanD/codexffmpeg/releases/tag/6.1.1</a> (<code>ffmpeg-6.1.1-full_build.zip</code>).</p>
+<p>it is basically same as the old one we have been using , so i just copied all my necessary non-ffmpeg files (<code>deno.exe</code>, <code>subthing.js</code>, <code>w2xyhh.mp4</code>) over to the new folder thing . .</p>
+</blockquote>
+<p>ok!! i will save my edited subs thing to <code>cool.txt</code>. now lets generate the Things by running</p>
+<pre><code>.\deno.exe run subthing.js cool.txt</code></pre>
+<figure>
+<img src="windows-tut-media/powershell_iPcMuKTPTb.png" alt="" /><figcaption>deno asking for permission</figcaption>
+</figure>
+<p>it will ask you for permission to read/write various files, to which you can grant access by just typing “y” and enter.</p>
+<figure>
+<img src="windows-tut-media/powershell_g0t2zv3OdI.png" alt="" /><figcaption>deno is done</figcaption>
+</figure>
+<p>after everything is done, it should have created two files: <code>hello.mkv.ps1</code> and <code>hello.mkv.sbv</code>!!</p>
+<p><code>hello.mkv.sbv</code> is an sbv subs file containing the retimed subs for the new hello.mkv file we want to create. (note: maybe it is possible to do all this stuff without generating an intermediate subs file, but idk and this is just the way i ended up doing it 😔. lmk if you know a better way)</p>
+<p><code>hello.mkv.ps1</code> is a powershell “script” file containing generated ffmpeg commands!! lets open this up to analyze it for educational purposes (you can open it in notepad)</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode ps"><code class="sourceCode postscript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>#!<span class="dt">/bin/bash</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>.\ffmpeg.exe -i &quot;w2xyhh.mp4&quot; -i &quot;hello.mkv.sbv&quot; -filter_complex `</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>&quot;[<span class="dv">0</span>:v]trim=start=1069ms:<span class="kw">end</span>=2898ms,setpts=PTS-STARTPTS,format=yuv420p[0v]; `</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a> [<span class="dv">0</span>:a]atrim=start=1069ms:<span class="kw">end</span>=2898ms,asetpts=PTS-STARTPTS[0a]; `</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a> [<span class="dv">0</span>:v]trim=start=3576ms:<span class="kw">end</span>=5321ms,setpts=PTS-STARTPTS,format=yuv420p[1v]; `</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a> [<span class="dv">0</span>:a]atrim=start=3576ms:<span class="kw">end</span>=5321ms,asetpts=PTS-STARTPTS[1a]; `</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a> [<span class="dv">0</span>:v]trim=start=11905ms:<span class="kw">end</span>=12542ms,setpts=PTS-STARTPTS,format=yuv420p[2v]; `</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a> [<span class="dv">0</span>:a]atrim=start=11905ms:<span class="kw">end</span>=12542ms,asetpts=PTS-STARTPTS[2a]; `</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a> [0v][0a][1v][1a][2v][2a]<span class="kw">concat</span>=n=<span class="dv">3</span>:v=<span class="dv">1</span>:a=<span class="dv">1</span>[outv][outa]&quot; -map [outv] -map [outa] -map <span class="dv">1</span>:s hello.mkv</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>.\ffmpeg.exe -i &quot;hello.mkv&quot; -vf &quot;subtitles=hello.mkv:stream_index=<span class="dv">0</span>&quot; -map <span class="dv">0</span> -map <span class="dv">-0</span>:s hello.mkv.baked.webm</span></code></pre></div>
+<p>ok well the commands are a bit long and stuff, but basically the first command takes in the <code>w2xyhh.mp4</code> file and does a bunch of fancy stuff and writes it to <code>hello.mkv</code>.</p>
+<p>Then the second command takes that <code>hello.mkv</code> and then does stuff with it and writes that output to <code>hello.mkv.baked.webm</code>. i call it “baked”.webm because essentially it like “bakes” the subtitles into the video like they are actually pixels inside the video, not a separate subtitles “track”. (note: if you want, you can change the extension from .webm to sth else like .mp4 to generate that if u want)</p>
+<p>OK so now we have generated these commands.. now we just have to run them!</p>
+<p>you can actually just run them by copy and pasting them into your command prompt. Or, you can run <code>.\hello.mkv.ps1</code> just like you would run <code>.\ffmpeg.exe</code> or sth and it will run the commands one after the other! it is up to you.</p>
+<figure>
+<img src="windows-tut-media/powershell_pCPBtSkGsi.png" alt="" /><figcaption>ran it</figcaption>
+</figure>
+<p>but after you have run the commands, you will see the two video files have been generated hopefully!! (unless something messed up, which that would be bad)</p>
+<p>they are <code>hello.mkv</code> and <code>hello.mkv.baked.webm</code>. you can open them up and they should be videos of hanni asking if u speak a little bit of english and hyein replying oui!! (specifically, with <code>hello.mkv.baked.webm</code> having the “baked-in” subtitles)</p>
+<figure>
+<video src="media/hello.mkv.baked.webm" controls=""><a href="media/hello.mkv.baked.webm"></a></video><figcaption>oui!!</figcaption>
+</figure>
+<h1 id="the-end">the end</h1>
+<p>ok this concludes my tutorial on how to use the little script program thingy i made!!</p>
+<p>i tried to make it as cohesive as possible but i dont think i really achieved that so let me know if u need any clarifications/help on anything!</p>
+<p>command-line thingies are quite different than ‘regular’ computer usage so it may be quite confusing when first learning to use them. but after you learn to use them they may be quite nice and useful (esp if you use computer things often).</p>
+<p>have a nice day !</p>
+</body>
+</html>
