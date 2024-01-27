@@ -189,7 +189,13 @@
 <p>how helpful, it explains what all parts of the arguments are doing! it is always good to understand what things you are running in the program so that you can modify them as you see fit, and also so that you know you are not going to copy something into your command prompt that will explode your computer and erase your bank account or something.</p>
 <p>so, following that person’s guidance, i have formulated the following command in order to cut the “oui” part out of our video:</p>
 <pre><code>.\ffmpeg.exe -ss 11s -to 13s -i w2xyhh.mp4 output.mp4</code></pre>
-<p>The argments mean the following: - <code>-ss 11s</code>: start from 11 seconds - <code>-to 13s</code>: end at 13 seconds - <code>-i w2xyhh.mp4</code>: use w2xyhh.mp4 as the input - <code>output.mp4</code>: output the output as <code>output.mp4</code>!!.</p>
+<p>The argments mean the following:</p>
+<ul>
+<li><code>-ss 11s</code>: start from 11 seconds</li>
+<li><code>-to 13s</code>: end at 13 seconds</li>
+<li><code>-i w2xyhh.mp4</code>: use w2xyhh.mp4 as the input</li>
+<li><code>output.mp4</code>: output the output as <code>output.mp4</code>!!.</li>
+</ul>
 <p>based on my previous experience with ffmpeg i have changed some parts, like using <code>11s</code> instead of a full <code>00:00:11</code> timestamp because i know that ffmpeg lets me do that. and also i ignored <code>-c copy</code> because that has to do with “codecs” and stuff and i do not want to deal with that stuff now.</p>
 <p>i ran this command, and it was done in no time!!</p>
 <figure>

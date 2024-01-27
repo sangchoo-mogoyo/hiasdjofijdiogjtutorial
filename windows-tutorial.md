@@ -147,6 +147,7 @@ so, following that person's guidance, i have formulated the following command in
 ```
 
 The argments mean the following:
+
 - `-ss 11s`: start from 11 seconds
 - `-to 13s`: end at 13 seconds
 - `-i w2xyhh.mp4`: use w2xyhh.mp4 as the input
